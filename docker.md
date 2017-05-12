@@ -136,5 +136,33 @@ As our container also includes emacs, you can try it out easily.
 After editing a text (such as Hello World) just say `CTRL`-`x` `CTRL`-`c` to save it and close the editor. To show the content of the file say.
 
 	cat hello.txt
+
+## Run cloudmesh cmd5
+
+Make sure you have a `cloudmesh.yaml` file at `~\.cloudmesh\cloudmesh.yaml` on the host machine.
+
+Clear old varibales to remove compatibility issues in the DB
+
+	rm ~/.cloudmesh/*-data
 	
+Run cmd5 image
+
+	docker run -it -v ~/.cloudmesh:/root/.cloudmesh  i523
+
+Start the cms shell
+
+	docker run -it -v ~/.cloudmesh:/root/.cloudmesh  i523 cms
+	
+You will see
+
+	+-------------------------------------------------------+
+	|   ____ _                 _                     _      |
+	|  / ___| | ___  _   _  __| |_ __ ___   ___  ___| |__   |
+	| | |   | |/ _ \| | | |/ _` | '_ ` _ \ / _ \/ __| '_ \  |
+	| | |___| | (_) | |_| | (_| | | | | | |  __/\__ \ | | | |
+	|  \____|_|\___/ \__,_|\__,_|_| |_| |_|\___||___/_| |_| |
+	+-------------------------------------------------------+
+	|                  Cloudmesh CMD5 Shell                 |
+	+-------------------------------------------------------+
+
 	

@@ -9,9 +9,17 @@
 FROM ubuntu:16.04
 
 # Label
-LABEL version="1.4"
+LABEL version="1.5"
 LABEL maintainer="laszewski@gmail.com"
 LABEL description="ubuntu 16.04 image for the class" 
+
+RUN apt-get -y update
+RUN apt-get -y install software-properties-common python-software-properties
+RUN add-apt-repository ppa:git-core/ppa
+RUN apt-get -y install git
+
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+RUN add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
 
 # Install.
 RUN \
@@ -28,7 +36,7 @@ RUN \
 
 
 # cloudmesh
-
+RUN apt-get install python-gdbm
 RUN pip install cloudmesh.common
 RUN pip install cloudmesh.cmd5
 RUN pip install cloudmesh.sys
@@ -39,7 +47,7 @@ RUN pip install ansible
 
 # R.
 
-#RUN apt-get -y install r-base
+RUN apt-get -y install r-base
 #RUN pip install rpy2
 #RUN apt-get -y install libcurl4-openssl-dev
 # setup R configs.
