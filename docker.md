@@ -102,4 +102,11 @@ Once executed you should see an outout similar to
 This willl at one point give you the following
 	
 	Successfully built b95c85a41f39
+	
+	
+	docker image ls
+	
+	REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+	i524                    latest              80e0c6de33a7        6 minutes ago       818 MB
+	hello-world             latest              48b5124b2768        3 months ago        1.84 kB
 
