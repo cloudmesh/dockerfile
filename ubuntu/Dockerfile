@@ -5,12 +5,13 @@
 # https://github.com/cloudmesh/dockerfile/ubuntu
 #
 
+# Pull base image.
+FROM ubuntu:16.04
+
+# Label
 LABEL version="1.1"
 LABEL maintainer="laszewski@gmail.com"
 LABEL description="ubuntu 16.04 image for the class" 
-
-# Pull base image.
-FROM ubuntu:16.04
 
 # Install.
 RUN \
