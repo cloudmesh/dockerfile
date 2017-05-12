@@ -5,6 +5,10 @@
 # https://github.com/cloudmesh/dockerfile/ubuntu
 #
 
+LABEL version="1.0"
+LABEL maintainer="laszewski@gmail.com"
+LABEL description="ubuntu 16.04 image for the class" 
+
 # Pull base image.
 FROM ubuntu:16.04
 
@@ -16,6 +20,7 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim emacs wget && \
+  apt-get install -y python python-dev python-pip python-virtualenv && \
   rm -rf /var/lib/apt/lists/*
 
 # Add files.

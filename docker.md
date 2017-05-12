@@ -103,10 +103,38 @@ This willl at one point give you the following
 	
 	Successfully built b95c85a41f39
 	
-	
-	docker image ls
-	
-	REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
-	i524                    latest              80e0c6de33a7        6 minutes ago       818 MB
-	hello-world             latest              48b5124b2768        3 months ago        1.84 kB
+	$ docker image ls
 
+	REPOSITORY          TAG       IMAGE ID            CREATED             SIZE
+	i523                latest    de41be2693ff        39 seconds ago      818 MB
+	ubuntu              16.04     f7b3f317ec73        2 weeks ago         117 MB
+	hello-world         latest    48b5124b2768        3 months ago        1.84 kB
+	
+## Deletion
+
+	docker rm -f $(docker ps -a -q)
+	docker rmi -f $(docker images -q)
+	
+## Start
+
+To start the class container with an interactive shell, please execute
+
+	docker run -it i523
+	
+You will see something similar to
+
+	root@b5020637c96d:~# 
+	
+Now you can try out some shell commands such as `pwd` or `ps`. Its time to start getting familiar with bash.
+
+## Using an editor
+
+As our container also includes emacs, you can try it out easily.
+
+	emacs hello.txt
+	
+After editing a text (such as Hello World) just say `CTRL`-`x` `CTRL`-`c` to save it and close the editor. To show the content of the file say.
+
+	cat hello.txt
+	
+	
