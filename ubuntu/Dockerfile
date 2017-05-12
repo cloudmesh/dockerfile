@@ -22,6 +22,7 @@ RUN \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim emacs wget && \
   apt-get install -y python python-dev python-pip python-virtualenv && \
+  apt-get install -y xauth && \
   rm -rf /var/lib/apt/lists/*
 
 # Add files.
