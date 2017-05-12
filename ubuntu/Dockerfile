@@ -5,7 +5,7 @@
 # https://github.com/cloudmesh/dockerfile/ubuntu
 #
 
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL maintainer="laszewski@gmail.com"
 LABEL description="ubuntu 16.04 image for the class" 
 
