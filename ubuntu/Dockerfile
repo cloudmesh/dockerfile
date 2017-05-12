@@ -9,7 +9,7 @@
 FROM ubuntu:16.04
 
 # Label
-LABEL version="1.1"
+LABEL version="1.4"
 LABEL maintainer="laszewski@gmail.com"
 LABEL description="ubuntu 16.04 image for the class" 
 
@@ -22,8 +22,29 @@ RUN \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim emacs wget && \
   apt-get install -y python python-dev python-pip python-virtualenv && \
+  apt-get install -y libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev && \
   apt-get install -y xauth && \
   rm -rf /var/lib/apt/lists/*
+
+
+# cloudmesh
+
+RUN pip install cloudmesh.common
+RUN pip install cloudmesh.cmd5
+RUN pip install cloudmesh.sys
+
+# Ansible.
+RUN pip install --upgrade pip
+RUN pip install ansible
+
+# R.
+
+#RUN apt-get -y install r-base
+#RUN pip install rpy2
+#RUN apt-get -y install libcurl4-openssl-dev
+# setup R configs.
+#RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
+#RUN Rscript -e "install.packages('ggplot2')"
 
 # Add files.
 # ADD root/.bashrc /root/.bashrc
